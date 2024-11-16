@@ -2,7 +2,7 @@
     <label [for]="inputName">{{ label }}</label>
         <div class="input-content"> 
             <input 
-                type="type" 
+                [type]="type" 
                 [placeholder]="placeholder"
                 [value]="value"
                 (inpu)="onInput($event)"
