@@ -1,12 +1,19 @@
 <app-default-login-layout
-    title="Fazer login"
-    primaryBtnText="Fazer login na sua conta"
-    secondBtnText="Registar nova conta"
+    title="Cadastre-se e começe hoje"
+    primaryBtnText="Cadastrar usuário"
+    secondBtnText="Fazer login"
     (submit)="submit()"
     (navigate)="navigate()"
 
     >
-<form [formGroup]="loginForm">
+<form [formGroup]="signupForm">
+    <app-pirmary-input
+    formControlName="name"
+    inputName="name"
+    type="text"
+    label="Nome Completo"
+    placeholder="Donizete Junior"
+        >  
     <app-pirmary-input
         formControlName="email"
         inputName="email"
@@ -23,6 +30,13 @@
         label="Senha">
         <!-- <img src="../../../assets/svg/key.svg" alt=""> -->
     </app-pirmary-input>
-    <span> Esqueceu a senha? </span>
+
+    <app-pirmary-input
+        formControlName="passwordConfirm"
+        inputName="passwordConfirm"
+        type="password"
+        label="Confirmar senha">
+<!-- <img src="../../../assets/svg/key.svg" alt=""> -->
+</app-pirmary-input>
 </form>
 </app-default-login-layout>
