@@ -1,10 +1,24 @@
 <app-default-login-layout
-title="Fazer login na sua conta"
-primaryBtnText="Fazer login na sua conta"
-secondBtnText="Registar nova conta"
->
-
+    primaryBtnText="Fazer login na sua conta"
+    secondBtnText="Registar nova conta"
+    >
 <form [formGroup]="loginForm">
-
+    <app-pirmary-input
+        formControlName="email"
+        inputName="email"
+        type="email"
+        label="Email"
+        placeholder="bellsystem@gmail.com"
+    >
+        <!-- <img src="../../../assets/svg/email.svg" alt=""> -->
+    </app-pirmary-input>
+        <app-pirmary-input
+        formControlName="password"
+        inputName="password"
+        type="password"
+        label="Senha">
+        <!-- <img src="../../../assets/svg/key.svg" alt=""> -->
+    </app-pirmary-input>
+    <span> Esqueceu a senha? </span>
 </form>
 </app-default-login-layout>
