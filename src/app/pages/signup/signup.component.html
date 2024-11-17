@@ -3,9 +3,8 @@
     primaryBtnText="Cadastrar usuário"
     secondBtnText="Fazer login"
     (submit)="submit()"
-    (navigate)="navigate()"
+    (navigate)="navigate()">
 
-    >
 <form [formGroup]="signupForm">
     <app-pirmary-input
     formControlName="name"
@@ -14,6 +13,7 @@
     label="Nome Completo"
     placeholder="Donizete Junior"
         >  
+    </app-pirmary-input>
     <app-pirmary-input
         formControlName="email"
         inputName="email"
@@ -21,14 +21,12 @@
         label="Email"
         placeholder="bellsystem@gmail.com"
     >
-        <!-- <img src="../../../assets/svg/email.svg" alt=""> -->
     </app-pirmary-input>
         <app-pirmary-input
         formControlName="password"
         inputName="password"
         type="password"
         label="Senha">
-        <!-- <img src="../../../assets/svg/key.svg" alt=""> -->
     </app-pirmary-input>
 
     <app-pirmary-input
@@ -36,7 +34,6 @@
         inputName="passwordConfirm"
         type="password"
         label="Confirmar senha">
-<!-- <img src="../../../assets/svg/key.svg" alt=""> -->
 </app-pirmary-input>
 </form>
 </app-default-login-layout>
