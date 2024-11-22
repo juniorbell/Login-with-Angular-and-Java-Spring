@@ -6,22 +6,19 @@
     (navigate)="navigate()"
 
     >
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
     <app-pirmary-input
         formControlName="email"
         inputName="email"
         type="email"
         label="Email"
-        placeholder="bellsystem@gmail.com"
-    >
-        <!-- <img src="../../../assets/svg/email.svg" alt=""> -->
+        placeholder="bellsystem@gmail.com">
     </app-pirmary-input>
-        <app-pirmary-input
+    <app-pirmary-input
         formControlName="password"
         inputName="password"
         type="password"
         label="Senha">
-        <!-- <img src="../../../assets/svg/key.svg" alt=""> -->
     </app-pirmary-input>
     <span> Esqueceu a senha? </span>
 </form>
