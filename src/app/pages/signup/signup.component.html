@@ -5,14 +5,17 @@
     (submit)="submit()"
     (navigate)="navigate()">
 
-<form [formGroup]="signupForm">
+<form [formGroup]="signupForm" (ngSubmit)="submit()">
     <app-pirmary-input
     formControlName="name"
     inputName="name"
     type="text"
     label="Nome Completo"
-    placeholder="Donizete Junior"
-        >  
+    placeholder="Donizete Junior">
+    <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+        <span *ngIf="signupForm.get('name')?.errors?.['required']">Nome é obrigatório.</span>
+        <span *ngIf="signupForm.get('name')?.errors?.['minlength']">O nome deve ter no mínimo 3 caracteres.</span>
+      </div>  
     </app-pirmary-input>
     <app-pirmary-input
         formControlName="email"

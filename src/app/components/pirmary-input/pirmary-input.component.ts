@@ -24,26 +24,26 @@ export class PirmaryInputComponent implements ControlValueAccessor{
 @Input() label: string = "";
 @Input() inputName: string = "";
 
-
 value: string = ''
  onChange: any = () => {}
  onTouch: any = () => {}
 
  onInput(event: Event) {
-  const value = (event.target as HTMLInputElement). value
-    this.onChange(value)
+  const value = (event.target as HTMLInputElement).value;
+    this.value = value;
+    this.onChange(value);
   }
 
   writeValue(value: any): void {
-    this.value = this.value
+    this.value = this.value || '';
   } 
 
   registerOnChange(fn: any): void {
-    this.onChange = fn
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouch = fn
+    this.onTouch = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {

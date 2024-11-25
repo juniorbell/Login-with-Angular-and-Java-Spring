@@ -2,10 +2,12 @@
     <label [for]="inputName">{{ label }}</label>
         <div class="input-content"> 
             <input 
-                [type]="type" 
-                [placeholder]="placeholder"
-                [value]="value"
-                (inpu)="onInput($event)"
+            [type]="type"
+            [id]="inputName"
+            [placeholder]="placeholder"
+            [value]="value"
+            (input)="onInput($event)"
+            (blur)="onTouch()"
             />
             <div class="icon">
                 <ng-content></ng-content>
