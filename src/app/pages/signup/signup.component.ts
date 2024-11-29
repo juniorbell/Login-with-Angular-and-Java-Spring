@@ -46,21 +46,12 @@ export class SignupComponet {
   }
 
   submit() {
-    if (this.signupForm.invalid) {
-      this.toastService.error("Por favor, preencha todos os campos corretamente.");
-      return;
-    }
-    const { name, email, password } = this.signupForm.value;
-  
-    if (!name || !email || !password) {
-      this.toastService.error("Campos obrigatórios estão vazios.");
-      return;
-    }
-    this.loginService.singup(name, email, password).subscribe({
-      next: () => this.toastService.success("Usuário cadastrado com sucesso!"),
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde.")
-    });
+    this.loginService.singup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
+      next: () => this.toastService.success("Login feito com sucesso!"),
+      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
+    })
   }
+
   navigate() {
     this.router.navigate(["login"])
   }
